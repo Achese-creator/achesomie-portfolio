@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*.venv/
+venv/
+
+# Generated vector indexes
+backend/faiss_index/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
