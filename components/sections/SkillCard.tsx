@@ -33,7 +33,7 @@ export default function SkillCard({
       "
         >
 
-            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
+            <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-gradient-to-br from-[#006E59]/10 to-[#F7BD53]/15" />
 
             <h3 className="mb-6 text-xl font-bold">
                 {title}
@@ -55,7 +55,7 @@ export default function SkillCard({
             text-sm
             text-gray-300
             transition
-            hover:border-blue-400
+            hover:border-[#F7BD53]
             hover:text-white
             "
                     >

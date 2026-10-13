@@ -1,131 +1,109 @@
+
 export const projects = [
     {
-        id: "coastcast",
-        name: "coastcast/",
-        title: "CoastCast",
-        image: "/projects/coastcast.png",
+        id: "vault-ai",
+        name: "vault-ai/",
+        title: "Vault AI — Universal Document Agent",
+        image: "/projects/vault-ai.png",
 
         description:
-            "Full-stack travel weather application featuring live weather forecasting, destination search, Google Maps integration, CSV/PDF export, search history, and destination meal recommendations.",
+            "A privacy-focused document intelligence application built during the TAG AI Engineering Bootcamp. Users can query documents using locally hosted LLMs, retrieve relevant passages with source citations, and compare information across multiple documents.",
 
         highlights: [
-            "5-Day Weather Forecast",
-            "Current Location Detection",
-            "Google Maps Integration",
-            "Destination Meal Recommendations",
-            "Search History",
-            "CSV Export",
-            "PDF Export",
-            "Responsive UI",
+            "Local LLM Inference with Ollama",
+            "Llama 3.2:3b",
+            "PDF, PPTX and TXT Support",
+            "Source-Grounded Answers",
+            "Multi-Document Comparison",
+            "Chroma Retrieval with Reranking",
+            "React and FastAPI",
+            "Team Project — 2nd Place",
         ],
+
         stack: [
+            "Python",
+            "FastAPI",
             "React",
-            "Next.js",
-            "Node.js",
-            "Express",
-            "SQLite",
-            "WeatherAPI",
-            "Google Maps",
+            "Ollama",
+            "Llama 3.2:3b",
+            "Chroma",
         ],
 
-        github: "#",
+        github:
+            "https://github.com/tag-ecosystemai/c1-accelerators-project-1",
 
-        demo: "#",
+        demo: "",
     },
 
     {
-        id: "cardio",
+        id: "talentmatch-ai",
+        name: "talentmatch-ai/",
+        title: "TalentMatch AI — Resume-to-Job Matching",
 
-        name: "cardiopredict/",
-
-        title: "Cardiovascular Disease Prediction",
-
-        image: "/projects/cardio.png",
+        image: "/projects/Talentmatch-ai.png",
 
         description:
-            "Deep Neural Network trained to predict cardiovascular disease risk with strong ROC-AUC performance and an interactive Streamlit deployment.",
+            "A team-built recruitment matching platform developed during the TAG AI Engineering Bootcamp. It evaluates resumes against job requirements using weighted criteria, helping recruiters understand how candidate profiles align with a role.",
 
         highlights: [
-            "Deep Neural Network",
-            "73%+ Prediction Accuracy",
-            "ROC-AUC ≈ 0.80",
-            "Interactive Streamlit App",
-            "Data Visualization",
-        ],
-
-        stack: [
-            "TensorFlow",
-            "Keras",
-            "Python",
-            "Streamlit",
-        ],
-
-        github: "#",
-
-        demo: "#",
-    },
-
-    {
-        id: "student",
-
-        name: "student-performance/",
-
-        title: "Student Performance Prediction",
-
-        image: "/projects/student.png",
-
-        description:
-            "End-to-end machine learning regression project including preprocessing, feature engineering, evaluation and deployment.",
-
-        highlights: [
-            "Regression Model",
-            "Feature Engineering",
-            "Data Cleaning",
-            "Interactive Dashboard",
-            "Performance Evaluation",
+            "Skills Match — 40%",
+            "Experience Match — 25%",
+            "Responsibilities Match — 15%",
+            "Education Match — 10%",
+            "Preferences Match — 10%",
+            "Explainable Matching Criteria",
+            "FastAPI Backend",
+            "React and TypeScript Frontend",
         ],
 
         stack: [
             "Python",
-            "Scikit-learn",
+            "FastAPI",
+            "React",
+            "TypeScript",
+            "SQLAlchemy",
+            "PostgreSQL",
+        ],
+
+        github:
+            "https://github.com/tag-ecosystemai/c1-accelerators-project-2",
+
+        demo: "",
+    },
+
+    {
+        id: "sentinel-ai",
+        name: "sentinel-ai/",
+        title: "SentinelAI — Supply-Chain Intelligence",
+
+        image: "/projects/sentinel-ai.jpg",
+
+        description:
+            "A supply-chain disruption intelligence project developed during the TAG AI Engineering Bootcamp. The solution focuses on investigating shipment risks using shipment data and supporting evidence, with an emphasis on explainable findings and a practical SaaS workflow.",
+
+        highlights: [
+            "Shipment Risk Investigation",
+            "Supply-Chain Disruption Analysis",
+            "Shipment CSV and Excel Workflow",
+            "Canonical Shipment Data",
+            "Evidence-Based Risk Assessment",
+            "AI Agent Engineering",
+            "FastAPI Backend",
+            "Team Accelerators",
+        ],
+
+        stack: [
+            "Python",
+            "FastAPI",
             "Pandas",
-            "Streamlit",
+            "SQLAlchemy",
+            "LLM Agents",
+            "RAG",
         ],
 
-        github: "#",
+        github:
+            "https://github.com/tag-ecosystemai/c1-accelerators-project-3",
 
-        demo: "#",
-    },
-
-    {
-        id: "rag",
-
-        name: "ai-rag-chatbot/",
-
-        title: "AI RAG Chatbot",
-
-        image: "/projects/chatbot.png",
-
-        description:
-            "Retrieval-Augmented Generation chatbot powered by LangChain, FAISS, Hugging Face embeddings and OpenAI/Groq models.",
-
-        highlights: [
-            "Retrieval-Augmented Generation",
-            "FAISS Vector Database",
-            "LangChain Pipeline",
-            "Groq/OpenAI Integration",
-            "Document Question Answering",
-        ],
-        
-        stack: [
-            "LangChain",
-            "FAISS",
-            "OpenAI",
-            "Groq",
-        ],
-
-        github: "#",
-
-        demo: "#",
+        demo: "https://sentinelai.wonderfulpebble-77e0325a.uksouth.azurecontainerapps.io/",
     },
 ];

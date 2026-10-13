@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const prompts = [
-    "💬 Ask about CoastCast",
-    "💬 Tell me about his AI projects",
-    "💬 Explain his ML experience",
-    "💬 Show me his best project",
-    "💬 Why AI Engineering?",
+    "💬 Explore my Vault AI project",
+    "💬 How does TalentMatch AI work?",
+    "💬 What problems does SentinelAI solve?",
+    "💬 Ask about my AI/ML experience",
+    "💬 Explore my technical skills",
 ];
 
 export default function PromptBubble() {
@@ -35,7 +35,7 @@ export default function PromptBubble() {
           rounded-full
           border
           border-white/10
-          bg-[#111827]/90
+          bg-[#102A25]/95
           px-5
           py-3
           text-sm

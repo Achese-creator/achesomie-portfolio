@@ -83,14 +83,14 @@ export default function Skills() {
                     className="mb-20 text-center"
                 >
 
-                    <p className="mb-4 uppercase tracking-[0.35em] text-blue-400">
+                    <p className="mb-4 uppercase tracking-[0.35em] text-[#F7BD53]">
                         Skills
                     </p>
 
                     <h2 className="text-5xl font-black">
 
                         Technologies I
-                        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#006E59] to-[#F7BD53] bg-clip-text text-transparent">
                             {" "}Work With
                         </span>
 

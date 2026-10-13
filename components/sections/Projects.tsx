@@ -28,20 +28,20 @@ export default function Projects() {
                     className="mb-20 text-center"
                 >
 
-                    <p className="mb-4 uppercase tracking-[0.35em] text-blue-400">
+                    <p className="mb-4 uppercase tracking-[0.35em] text-[#F7BD53]">
                         Featured Projects
                     </p>
 
                     <h2 className="text-5xl font-black">
 
-                        Things I've
-                        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        Things I&apos;ve
+                        <span className="bg-gradient-to-r from-[#006E59] to-[#F7BD53] bg-clip-text text-transparent">
                             {" "}Built
                         </span>
 
                     </h2>
 
-                    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+                    <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#F9FDFD]/65">
 
                         Explore some of my AI, Machine Learning and Full-Stack
                         applications. Select a project from the explorer to

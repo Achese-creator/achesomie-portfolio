@@ -16,7 +16,7 @@ export default function AnimatedBackground() {
                     repeat: Infinity,
                     ease: "easeInOut",
                 }}
-                className="absolute left-[-120px] top-[-80px] h-[420px] w-[420px] rounded-full bg-blue-500/20 blur-[120px]"
+                className="absolute left-[-120px] top-[-80px] h-[420px] w-[420px] rounded-full bg-[#006E59]/20 blur-[120px]"
             />
 
             {/* Purple Glow */}

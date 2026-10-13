@@ -9,6 +9,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
+        "https://humble-space-umbrella-jjx9qxqv7jxqcqpw9-3000.app.github.dev",
     ],
     allow_credentials=True,
     allow_methods=["*"],

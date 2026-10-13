@@ -38,7 +38,7 @@ export default function Navbar() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0B0F19]/60 backdrop-blur-2xl"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#102A25]/85 backdrop-blur-2xl"
     >
       <Container className="flex h-20 items-center justify-between">
 
@@ -48,7 +48,7 @@ export default function Navbar() {
 
           <h2 className="text-xl font-black tracking-tight">
 
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-500 bg-clip-text text-transparent transition duration-300 group-hover:brightness-125">
+            <span className="bg-gradient-to-r from-[#F7BD53] via-[#F9FDFD] to-[#F7BD53] bg-clip-text text-transparent transition duration-300 group-hover:brightness-125">
 
               Achesomie
 
@@ -67,7 +67,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className="group relative text-sm font-medium text-gray-300 transition hover:text-white"
+              className="group relative text-sm font-medium text-[#F9FDFD]/75 transition hover:text-[#F7BD53]"
             >
 
               {item.name}
@@ -81,8 +81,8 @@ export default function Navbar() {
                   w-0
                   rounded-full
                   bg-gradient-to-r
-                  from-blue-400
-                  to-purple-500
+                  from-[#006E59]
+                  to-[#F7BD53]
                   transition-all
                   duration-300
                   group-hover:w-full
@@ -109,26 +109,33 @@ export default function Navbar() {
               gap-2
               rounded-full
               border
-              border-blue-500/20
-              bg-gradient-to-r
-              from-blue-600
-              to-purple-600
+              border-[#F7BD53]/30
+              bg-[#F7BD53]
               px-5
               py-2
               text-sm
               font-semibold
-              text-white
+              text-[#102A25]
               shadow-lg
-              shadow-blue-500/20
+              shadow-black/20
               transition-all
               duration-300
               hover:-translate-y-1
-              hover:shadow-blue-500/50
+              hover:shadow-black/30
               md:flex
             "
           >
             <FileText size={16} />
-            Resume
+            View CV
+          </a>
+
+          <a
+            href="/YifieyehAcheseIntern_1page.pdf"
+            download="Achesomie-Yifieyeh-Resume.pdf"
+            aria-label="Download resume PDF"
+            className="hidden md:inline-flex items-center justify-center rounded-full border border-[#F7BD53]/30 px-3 py-2 text-sm font-semibold text-[#F9FDFD] transition-all duration-300 hover:-translate-y-1 hover:bg-[#F7BD53]/10 hover:text-[#F7BD53]"
+          >
+            Download CV
           </a>
 
           {/* GitHub */}
@@ -144,14 +151,14 @@ export default function Navbar() {
               border-white/10
               bg-white/5
               p-2.5
-              text-gray-300
+              text-[#F9FDFD]/80
               backdrop-blur
               transition-all
               duration-300
               hover:-translate-y-1
-              hover:border-blue-400/40
-              hover:text-white
-              hover:shadow-[0_0_20px_rgba(59,130,246,.35)]
+              hover:border-[#F7BD53]/60
+              hover:text-[#F7BD53]
+              hover:shadow-[0_0_20px_rgba(247,189,83,.2)]
             "
           >
             <FaGithub size={18} />
@@ -170,14 +177,14 @@ export default function Navbar() {
               border-white/10
               bg-white/5
               p-2.5
-              text-gray-300
+              text-[#F9FDFD]/80
               backdrop-blur
               transition-all
               duration-300
               hover:-translate-y-1
-              hover:border-blue-400/40
-              hover:text-white
-              hover:shadow-[0_0_20px_rgba(59,130,246,.35)]
+              hover:border-[#F7BD53]/60
+              hover:text-[#F7BD53]
+              hover:shadow-[0_0_20px_rgba(247,189,83,.2)]
             "
           >
             <FaLinkedin size={18} />
@@ -195,10 +202,10 @@ export default function Navbar() {
               border-white/10
               bg-white/5
               p-2.5
-              text-white
+              text-[#F9FDFD]
               backdrop-blur
               transition
-              hover:border-blue-500/40
+              hover:border-[#F7BD53]/60
               lg:hidden
             "
           >
@@ -206,14 +213,14 @@ export default function Navbar() {
           </button>
 
           {menuOpen && (
-            <div className="absolute right-4 top-20 z-40 w-56 rounded-lg border border-white/10 bg-[#0B0F19]/90 p-4 shadow-lg lg:hidden">
+            <div className="absolute right-4 top-20 z-40 w-56 rounded-lg border border-white/10 bg-[#102A25]/95 p-4 shadow-lg lg:hidden">
               <nav className="flex flex-col gap-3">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-gray-300 hover:text-white"
+                    className="text-[#F9FDFD]/80 hover:text-[#F7BD53]"
                   >
                     {item.name}
                   </a>
@@ -222,17 +229,27 @@ export default function Navbar() {
                 <a
                   href="/YifieyehAcheseIntern_1page.pdf"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 inline-flex items-center gap-2 rounded-full border border-blue-500/20 px-3 py-2 text-sm font-semibold text-white"
+                  className="mt-2 inline-flex items-center gap-2 rounded-full border border-[#F7BD53]/30 px-3 py-2 text-sm font-semibold text-[#F7BD53]"
                 >
                   <FileText size={14} />
-                  Resume
+                  View CV
+                </a>
+
+                <a
+                  href="/YifieyehAcheseIntern_1page.pdf"
+                  download="Achesomie-Yifieyeh-Resume.pdf"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-[#F7BD53]/30 bg-[#F7BD53] px-3 py-2 text-sm font-semibold text-[#102A25] transition-colors hover:bg-[#F9D58A]"
+                >
+                  <FileText size={14} />
+                  Download CV
                 </a>
 
                 <div className="flex gap-2 mt-2">
-                  <a href="https://github.com/Achese-creator" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-md p-2 text-gray-300 hover:text-white">
+                  <a href="https://github.com/Achese-creator" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-md p-2 text-[#F9FDFD]/80 hover:text-[#F7BD53]">
                     <FaGithub size={18} />
                   </a>
-                  <a href="https://linkedin.com/in/maverickhoodie" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-md p-2 text-gray-300 hover:text-white">
+                  <a href="https://linkedin.com/in/maverickhoodie" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-md p-2 text-[#F9FDFD]/80 hover:text-[#F7BD53]">
                     <FaLinkedin size={18} />
                   </a>
                 </div>

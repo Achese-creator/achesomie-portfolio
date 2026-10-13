@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Props {
     open: boolean;
@@ -25,10 +27,10 @@ export default function ChatWindow({ open }: Props) {
     ]);
 
     const suggestedQuestions = [
-        "Tell me about CoastCast",
-        "Best AI Project",
-        "Technical Skills",
-        "Education",
+        "Tell me about Vault AI",
+        "Explain TalentMatch AI",
+        "What is SentinelAI?",
+        "What are my technical skills?",
     ];
 
     const sendMessage = async () => {
@@ -44,7 +46,13 @@ export default function ChatWindow({ open }: Props) {
         setLoading(true);
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/chat", {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "");
+
+            if (!apiUrl) {
+                throw new Error("NEXT_PUBLIC_API_URL is not configured.");
+            }
+
+            const res = await fetch(`${apiUrl}/chat`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -54,7 +62,15 @@ export default function ChatWindow({ open }: Props) {
                 }),
             });
 
+            if (!res.ok) {
+                throw new Error(`Chat API returned HTTP ${res.status}`);
+            }
+
             const data = await res.json();
+
+            if (typeof data.answer !== "string") {
+                throw new Error("The chat API returned an invalid response.");
+            }
 
             setMessages((prev) => [
                 ...prev,
@@ -118,7 +134,7 @@ export default function ChatWindow({ open }: Props) {
             rounded-3xl
             border
             border-white/10
-            bg-[#0B0F19]/95
+            bg-[#102A25]/95
             shadow-2xl
             backdrop-blur-xl
           "
@@ -148,8 +164,8 @@ export default function ChatWindow({ open }: Props) {
                             >
                                 <div
                                     className={`max-w-[85%] rounded-2xl p-4 ${msg.role === "assistant"
-                                        ? "rounded-tl-md border border-blue-500/20 bg-blue-500/10"
-                                        : "rounded-tr-md bg-gradient-to-r from-blue-600 to-purple-600"
+                                        ? "rounded-tl-md border border-[#F7BD53]/25 bg-[#F7BD53]/10"
+                                        : "rounded-tr-md bg-gradient-to-r from-[#F7BD53] to-[#F7BD53]"
                                         }`}
                                 >
                                     <p className="mb-2 text-xs font-semibold opacity-70">
@@ -158,24 +174,32 @@ export default function ChatWindow({ open }: Props) {
                                             : "You"}
                                     </p>
 
-                                    <p className="text-sm leading-7 text-white">
-                                        {msg.text}
-                                    </p>
+                                    {msg.role === "assistant" ? (
+                                        <div className="text-sm leading-7 text-white [&_p]:mb-2 [&_p:last-child]:mb-0 [&_strong]:font-bold [&_strong]:text-white [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:space-y-1 [&_ol]:pl-5 [&_li]:pl-1 [&_h1]:mb-2 [&_h1]:text-lg [&_h1]:font-bold [&_h2]:mb-2 [&_h2]:text-base [&_h2]:font-bold [&_h3]:mb-1 [&_h3]:font-semibold [&_a]:text-[#F7BD53] [&_a]:underline [&_blockquote]:border-l-2 [&_blockquote]:border-[#F7BD53]/50 [&_blockquote]:pl-3">
+                                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                {msg.text}
+                                            </ReactMarkdown>
+                                        </div>
+                                    ) : (
+                                        <p className="text-sm leading-7 text-white whitespace-pre-wrap">
+                                            {msg.text}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                         ))}
 
                         {loading && (
                             <div className="flex justify-start">
-                                <div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 px-5 py-4">
+                                <div className="rounded-2xl border border-[#F7BD53]/25 bg-[#F7BD53]/10 px-5 py-4">
                                     <div className="flex gap-1">
-                                        <span className="h-2 w-2 animate-bounce rounded-full bg-blue-400"></span>
+                                        <span className="h-2 w-2 animate-bounce rounded-full bg-[#F7BD53]"></span>
                                         <span
-                                            className="h-2 w-2 animate-bounce rounded-full bg-blue-400"
+                                            className="h-2 w-2 animate-bounce rounded-full bg-[#F7BD53]"
                                             style={{ animationDelay: "0.15s" }}
                                         ></span>
                                         <span
-                                            className="h-2 w-2 animate-bounce rounded-full bg-blue-400"
+                                            className="h-2 w-2 animate-bounce rounded-full bg-[#F7BD53]"
                                             style={{ animationDelay: "0.3s" }}
                                         ></span>
                                     </div>
@@ -205,8 +229,8 @@ export default function ChatWindow({ open }: Props) {
                     text-xs
                     text-gray-300
                     transition-all
-                    hover:border-blue-500
-                    hover:bg-blue-500/10
+                    hover:border-[#F7BD53]
+                    hover:bg-[#F7BD53]/10
                     hover:text-white
                   "
                                 >
@@ -239,7 +263,7 @@ export default function ChatWindow({ open }: Props) {
                   outline-none
                   transition
                   placeholder:text-gray-500
-                  focus:border-blue-500
+                  focus:border-[#F7BD53]
                 "
                             />
 
@@ -254,7 +278,7 @@ export default function ChatWindow({ open }: Props) {
                   transition-all
                   ${!message.trim() || loading
                                         ? "cursor-not-allowed bg-gray-700 opacity-50"
-                                        : "bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105"
+                                        : "bg-gradient-to-r from-[#F7BD53] to-[#F7BD53] hover:scale-105"
                                     }
                 `}
                             >

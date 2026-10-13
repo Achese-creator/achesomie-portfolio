@@ -10,8 +10,6 @@ export default function TypingCommand({ command }: Props) {
     const [text, setText] = useState("");
 
     useEffect(() => {
-        setText("");
-
         let i = 0;
 
         const interval = setInterval(() => {
@@ -27,7 +25,7 @@ export default function TypingCommand({ command }: Props) {
     }, [command]);
 
     return (
-        <p className="font-mono text-blue-400">
+        <p className="font-mono text-[#F7BD53]">
             {text}
             <span className="animate-pulse">█</span>
         </p>

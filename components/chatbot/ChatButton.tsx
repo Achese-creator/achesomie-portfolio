@@ -3,14 +3,10 @@
 import { motion } from "framer-motion";
 
 interface ChatButtonProps {
-    isOpen: boolean;
     onClick: () => void;
 }
 
-export default function ChatButton({
-    isOpen,
-    onClick,
-}: ChatButtonProps) {
+export default function ChatButton({ onClick }: ChatButtonProps) {
     return (
         <motion.button
             onClick={onClick}
@@ -50,9 +46,9 @@ items-center
 justify-center
 rounded-full
 bg-gradient-to-br
-from-blue-600
+from-[#F7BD53]
 via-cyan-500
-to-purple-600
+to-[#F7BD53]
 text-white
 backdrop-blur-xl
 "

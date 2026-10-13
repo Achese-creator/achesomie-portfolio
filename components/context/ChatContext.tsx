@@ -2,6 +2,7 @@
 
 import {
     createContext,
+    useCallback,
     useContext,
     useState,
     ReactNode,
@@ -23,13 +24,17 @@ export function ChatProvider({
 }) {
     const [open, setOpen] = useState(false);
 
+    const openChat = useCallback(() => setOpen(true), []);
+    const closeChat = useCallback(() => setOpen(false), []);
+    const toggleChat = useCallback(() => setOpen((prev) => !prev), []);
+
     return (
         <ChatContext.Provider
             value={{
                 open,
-                openChat: () => setOpen(true),
-                closeChat: () => setOpen(false),
-                toggleChat: () => setOpen((prev) => !prev),
+                openChat,
+                closeChat,
+                toggleChat,
             }}
         >
             {children}

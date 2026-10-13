@@ -21,11 +21,11 @@ export default function AboutCard() {
       "
         >
 
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl" />
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#F7BD53]/20 blur-3xl" />
 
             <div className="space-y-8">
 
-                <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-4xl font-black">
+                <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-[#006E59] to-[#F7BD53] text-4xl font-black">
                     AG
                 </div>
 

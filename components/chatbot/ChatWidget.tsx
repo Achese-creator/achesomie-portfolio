@@ -6,9 +6,10 @@ import ChatButton from "./ChatButton";
 import ChatWindow from "./ChatWindow";
 import WelcomeBubble from "./WelcomeBubble";
 import PromptBubble from "./PromptBubble";
+import { useChat } from "@/components/context/ChatContext";
 
 export default function ChatWidget() {
-  const [open, setOpen] = useState(false);
+  const { open, openChat, closeChat, toggleChat } = useChat();
   const [showWelcome, setShowWelcome] = useState(false);
   const chatRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +35,7 @@ export default function ChatWidget() {
         chatRef.current &&
         !chatRef.current.contains(event.target as Node)
       ) {
-        setOpen(false);
+        closeChat();
       }
     };
 
@@ -43,10 +44,10 @@ export default function ChatWidget() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [open]);
+  }, [open, closeChat]);
 
   const handleOpen = () => {
-    setOpen(true);
+    openChat();
     setShowWelcome(false);
   };
 
@@ -60,9 +61,8 @@ export default function ChatWidget() {
       />
 
       <ChatButton
-        isOpen={open}
         onClick={() => {
-          setOpen(!open);
+          toggleChat();
           setShowWelcome(false);
         }}
       />

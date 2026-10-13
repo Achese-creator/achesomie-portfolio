@@ -24,7 +24,7 @@ interface TerminalProps {
 export default function Terminal({ project }: TerminalProps) {
     const { openChat } = useChat();
     return (
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0B0F19]/80 shadow-2xl backdrop-blur-xl">
+        <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#102A25]/90 shadow-2xl backdrop-blur-xl">
 
             {/* Terminal Header */}
             <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
@@ -33,7 +33,7 @@ export default function Terminal({ project }: TerminalProps) {
                 <div className="h-3 w-3 rounded-full bg-yellow-500" />
                 <div className="h-3 w-3 rounded-full bg-green-500" />
 
-                <span className="ml-4 text-sm text-gray-500">
+                <span className="ml-4 text-sm text-[#F9FDFD]/45">
                     ~/portfolio/projects
                 </span>
 
@@ -59,7 +59,7 @@ export default function Terminal({ project }: TerminalProps) {
 
                     <div className="mx-auto max-w-5xl">
 
-                        <div className="rounded-t-2xl border border-white/10 bg-[#141922] px-6 py-3">
+                        <div className="rounded-t-2xl border border-white/10 bg-[#303030] px-6 py-3">
 
                             <div className="flex gap-2">
 
@@ -81,7 +81,7 @@ export default function Terminal({ project }: TerminalProps) {
 
                         </div>
 
-                        <div className="h-5 rounded-b-full bg-[#202734]" />
+                        <div className="h-5 rounded-b-full bg-[#303030]" />
 
                     </div>
 
@@ -93,7 +93,7 @@ export default function Terminal({ project }: TerminalProps) {
 
                     {/* Description */}
 
-                    <p className="max-w-3xl leading-8 text-gray-400">
+                    <p className="max-w-3xl leading-8 text-[#F9FDFD]/65">
                         {project.description}
                     </p>
 
@@ -110,7 +110,7 @@ export default function Terminal({ project }: TerminalProps) {
                             {project.highlights?.map((item) => (
                                 <div
                                     key={item}
-                                    className="rounded-xl border border-blue-500/10 bg-blue-500/5 p-4"
+                                    className="rounded-xl border border-[#F7BD53]/20 bg-[#F7BD53]/5 p-4"
                                 >
 
                                     ✓ {item}
@@ -133,12 +133,12 @@ export default function Terminal({ project }: TerminalProps) {
                                 className="
                   rounded-full
                   border
-                  border-blue-500/20
-                  bg-blue-500/10
+                  border-[#F7BD53]/30
+                  bg-[#F7BD53]/10
                   px-4
                   py-2
                   text-sm
-                  text-blue-300
+                  text-[#F7BD53]
                 "
                             >
                                 {tech}
@@ -164,42 +164,44 @@ export default function Terminal({ project }: TerminalProps) {
                 px-6
                 py-3
                 transition
-                hover:border-blue-500
+                hover:border-[#F7BD53]
                 hover:bg-white/10
               "
                         >
                             GitHub
                         </a>
 
-                        <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                rounded-xl
-                bg-gradient-to-r
-                from-blue-600
-                to-purple-600
-                px-6
-                py-3
-                font-semibold
-                text-white
-                transition
-                hover:scale-105
-              "
-                        >
-                            Live Demo →
-                        </a>
+                        {project.demo && (
+                            <a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                    rounded-xl
+                    bg-gradient-to-r
+                    from-[#F7BD53]
+                    to-[#F7BD53]
+                    px-6
+                    py-3
+                    font-semibold
+                    text-white
+                    transition
+                    hover:scale-105
+                  "
+                            >
+                                Live Demo →
+                            </a>
+                        )}
 
                     </div>
 
-                    <div className="mt-10 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-6">
+                    <div className="mt-10 rounded-2xl border border-[#F7BD53]/30 bg-[#F7BD53]/5 p-6">
 
-                        <h3 className="mb-2 text-lg font-semibold text-blue-300">
+                        <h3 className="mb-2 text-lg font-semibold text-[#F7BD53]">
                             Ask My Portfolio
                         </h3>
 
-                        <p className="text-gray-400">
+                        <p className="text-[#F9FDFD]/65">
                             Curious about how this project works? Ask my AI assistant about
                             the architecture, technologies, implementation, or technical decisions
                             behind this project.
@@ -207,7 +209,7 @@ export default function Terminal({ project }: TerminalProps) {
 
                         <button
                             onClick={openChat}
-                            className="mt-4 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-2 font-semibold text-white transition hover:scale-105"
+                            className="mt-4 rounded-lg bg-[#F7BD53] px-5 py-2 font-semibold text-[#102A25] transition hover:scale-105"
                         >
                             Ask the AI →
                         </button>

@@ -27,15 +27,15 @@ export default function WelcomeBubble({
           w-[320px]
           rounded-3xl
           border
-          border-blue-500/20
-          bg-[#0B0F19]/95
+          border-[#F7BD53]/25
+          bg-[#102A25]/95
           p-5
           shadow-2xl
           backdrop-blur-xl
           "
                 >
                     <p className="text-lg font-bold text-white">
-                        👋 Hi, I'm Achesomie's AI Assistant
+                        👋 Hi, I&apos;m Achesomie&apos;s AI Assistant
                     </p>
 
                     <p className="mt-3 text-sm leading-6 text-gray-400">
@@ -57,8 +57,8 @@ export default function WelcomeBubble({
             w-full
             rounded-xl
             bg-gradient-to-r
-            from-blue-600
-            to-purple-600
+            from-[#F7BD53]
+            to-[#F7BD53]
             py-3
             font-semibold
             text-white

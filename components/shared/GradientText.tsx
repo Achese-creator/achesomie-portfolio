@@ -8,7 +8,7 @@ export default function GradientText({
     children,
 }: GradientTextProps) {
     return (
-        <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-[#006E59] via-[#F9FDFD] to-[#F7BD53] bg-clip-text text-transparent">
             {children}
         </span>
     );

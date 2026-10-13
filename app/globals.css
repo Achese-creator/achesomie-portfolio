@@ -1,12 +1,33 @@
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Portfolio brand palette */
+/* Portfolio brand palette */
+:root {
+  --color-emerald: #006E59;
+  --color-gold: #F7BD53;
+  --color-ice-white: #F9FDFD;
+  --color-dark: #102A25;
+
+  --background: var(--color-dark);
+  --foreground: var(--color-ice-white);
+}
+
+html {
+  background: var(--color-dark);
+  color: var(--color-ice-white);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #0b0f19;
-  color: #f9fafb;
+  background: var(--color-dark);
+  color: var(--color-ice-white);
 }
 
+/* Gradient animation */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -21,30 +42,13 @@ body {
   }
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+.animate-gradient,
 .animate-gradientShift {
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
 }
 
+/* Hero globe */
 @keyframes rotateGlobe {
   from {
     transform: rotate(0deg);
@@ -63,6 +67,7 @@ body {
   animation: rotateGlobe 120s linear infinite;
 }
 
+/* Floating particles */
 @keyframes floatParticle {
   0% {
     transform: translateY(0) translateX(0);
@@ -83,11 +88,7 @@ body {
 .particle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  background: rgba(242, 240, 233, 0.8);
+  box-shadow: 0 0 10px rgba(242, 240, 233, 0.35);
   animation: floatParticle 6s ease-in-out infinite;
-}
-
-html {
-  scroll-behavior: smooth;
 }

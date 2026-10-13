@@ -14,7 +14,7 @@ export default function FileExplorer({
 }: FileExplorerProps) {
     return (
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-            <p className="mb-6 text-xs uppercase tracking-[0.3em] text-blue-400">
+            <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#F7BD53]">
                 AI Project Lab
             </p>
 
@@ -26,7 +26,7 @@ export default function FileExplorer({
                         whileTap={{ scale: 0.98 }}
                         onClick={() => onSelect(project.id)}
                         className={`flex w-full items-center rounded-xl px-4 py-3 text-left transition-all duration-300 ${selected === project.id
-                                ? "border border-blue-500/30 bg-blue-500/10 text-blue-300 shadow-lg shadow-blue-500/10"
+                                ? "border border-[#F7BD53]/40 bg-[#F7BD53]/10 text-[#F7BD53] shadow-lg shadow-[#F7BD53]/10"
                                 : "text-gray-400 hover:bg-white/5 hover:text-white"
                             }`}
                     >

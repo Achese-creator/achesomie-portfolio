@@ -20,13 +20,13 @@ export default function About() {
                     className="mb-20 text-center"
                 >
 
-                    <p className="mb-4 uppercase tracking-[0.35em] text-blue-400">
+                    <p className="mb-4 uppercase tracking-[0.35em] text-[#F7BD53]">
                         About Me
                     </p>
 
                     <h2 className="text-5xl font-black">
                         Building Intelligent
-                        <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#006E59] to-[#F7BD53] bg-clip-text text-transparent">
                             {" "}AI Systems
                         </span>
                     </h2>
@@ -47,7 +47,7 @@ export default function About() {
 
                         <p className="text-lg leading-8 text-gray-400">
 
-                            I'm an AI & Machine Learning Engineer with a background in
+                            I&apos;m an AI & Machine Learning Engineer with a background in
                             Biochemistry from Rivers State University. My transition into
                             technology was driven by curiosity about how intelligent systems
                             can solve real-world problems.
@@ -57,7 +57,7 @@ export default function About() {
                         <p className="text-lg leading-8 text-gray-400">
 
                             Through hands-on projects, bootcamps, and continuous learning,
-                            I've built production-ready AI applications ranging from
+                            I&apos;ve built production-ready AI applications ranging from
                             predictive machine learning systems to full-stack AI solutions
                             powered by modern LLMs.
 

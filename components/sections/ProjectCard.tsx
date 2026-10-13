@@ -84,12 +84,12 @@ export default function ProjectCard({
                                 className="
                 rounded-full
                 border
-                border-blue-500/20
-                bg-blue-500/10
+                border-[#F7BD53]/25
+                bg-[#F7BD53]/10
                 px-3
                 py-1
                 text-sm
-                text-blue-300
+                text-[#F7BD53]
                 "
                             >
                                 {tech}
@@ -103,30 +103,31 @@ export default function ProjectCard({
 
                     <div className="flex gap-4">
 
-                        <a
-                            href={live}
-                            target="_blank"
-                            className="
-              flex
-              items-center
-              gap-2
-              rounded-xl
-              bg-gradient-to-r
-              from-blue-600
-              to-purple-600
-              px-5
-              py-3
-              font-semibold
-              text-white
-              transition
-              hover:scale-105
-              "
-                        >
-                            Live Demo
-
-                            <ArrowUpRight size={18} />
-
-                        </a>
+                        {live && (
+                            <a
+                                href={live}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                  flex
+                  items-center
+                  gap-2
+                  rounded-xl
+                  bg-gradient-to-r
+                  from-[#F7BD53]
+                  to-[#F7BD53]
+                  px-5
+                  py-3
+                  font-semibold
+                  text-white
+                  transition
+                  hover:scale-105
+                  "
+                            >
+                                Live Demo
+                                <ArrowUpRight size={18} />
+                            </a>
+                        )}
 
                         <a
                             href={github}

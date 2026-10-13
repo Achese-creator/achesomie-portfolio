@@ -93,29 +93,45 @@ export default function AIOrb() {
             onMouseLeave={resetMouse}
         >
             {/* Background Glow */}
-            <div className="absolute h-96 w-96 rounded-full bg-blue-500/20 blur-[120px]" />
-            <div className="absolute h-72 w-72 rounded-full bg-purple-500/20 blur-[120px]" />
-            {Array.from({ length: 35 }).map((_, i) => (
-                <motion.div
-                    key={i}
-                    className="absolute rounded-full bg-blue-300/60"
-                    style={{
-                        width: 2,
-                        height: 2,
-                        left: `${(i * 37) % 100}%`,
-                        top: `${(i * 53) % 100}%`,
-                    }}
-                    animate={{
-                        opacity: [0.2, 1, 0.2],
-                        scale: [1, 2, 1],
-                    }}
-                    transition={{
-                        duration: 3 + (i % 5),
-                        repeat: Infinity,
-                        delay: i * 0.1,
-                    }}
-                />
-            ))}
+            <div className="absolute h-96 w-96 rounded-full bg-[#006E59]/20 blur-[120px]" />
+            <div className="absolute h-72 w-72 rounded-full bg-[#F9FDFD]/10 blur-[120px]" />
+            {Array.from({ length: 65 }).map((_, i) => {
+                const size = i % 7 === 0 ? 4 : i % 3 === 0 ? 3 : 2;
+
+                return (
+                    <motion.div
+                        key={i}
+                        className="absolute rounded-full"
+                        style={{
+                            width: size,
+                            height: size,
+                            left: `${(i * 37) % 100}%`,
+                            top: `${(i * 53) % 100}%`,
+                            backgroundColor:
+                                i % 9 === 0
+                                    ? "#F7BD53"
+                                    : i % 4 === 0
+                                      ? "#F9FDFD"
+                                      : "#006E59",
+                            boxShadow:
+                                i % 9 === 0
+                                    ? "0 0 10px rgba(247,189,83,0.8)"
+                                    : "0 0 8px rgba(0,110,89,0.6)",
+                        }}
+                        animate={{
+                            opacity: [0.15, 0.9, 0.15],
+                            scale: [1, i % 7 === 0 ? 1.8 : 1.4, 1],
+                            y: [0, i % 2 === 0 ? -8 : 8, 0],
+                        }}
+                        transition={{
+                            duration: 3 + (i % 5),
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: i * 0.08,
+                        }}
+                    />
+                );
+            })}
 
             <motion.div
                 animate={{
@@ -128,7 +144,7 @@ export default function AIOrb() {
                 }}
                 className="absolute h-[360px] w-[360px]"
             >
-                <div className="absolute left-1/2 top-0 h-5 w-5 -translate-x-1/2 rounded-full bg-cyan-400 blur-sm" />
+                <div className="absolute left-1/2 top-0 h-5 w-5 -translate-x-1/2 rounded-full bg-[#006E59] blur-sm" />
             </motion.div>
             {/* Outer Ring */}
             <motion.div
@@ -149,7 +165,7 @@ export default function AIOrb() {
                     repeat: Infinity,
                     ease: "linear",
                 }}
-                className="absolute h-[300px] w-[300px] rounded-full border border-blue-500/20"
+                className="absolute h-[300px] w-[300px] rounded-full border border-[#006E59]/30"
             />
 
             {/* Center Core */}
@@ -158,9 +174,9 @@ export default function AIOrb() {
                     scale: [1, 1.08, 1],
                     rotate: [0, 360],
                     boxShadow: [
-                        "0 0 40px rgba(59,130,246,.5)",
-                        "0 0 90px rgba(139,92,246,.9)",
-                        "0 0 40px rgba(59,130,246,.5)",
+                        "0 0 40px rgba(0,110,89,.35)",
+                        "0 0 90px rgba(0,110,89,.55)",
+                        "0 0 40px rgba(0,110,89,.35)",
                     ],
                 }}
                 transition={{
@@ -168,7 +184,7 @@ export default function AIOrb() {
                     repeat: Infinity,
                     ease: "linear",
                 }}
-                className="relative flex h-28 w-28 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-blue-500 via-cyan-400 to-purple-600 backdrop-blur-xl"
+                className="relative flex h-28 w-28 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-[#102A25] via-[#006E59] to-[#102A25] backdrop-blur-xl"
 
             >
                 <div className="
@@ -186,7 +202,7 @@ blur-sm
                         AI
                     </span>
 
-                    <span className="mt-1 text-[10px] uppercase tracking-[0.45em] text-blue-200">
+                    <span className="mt-1 text-[10px] uppercase tracking-[0.45em] text-[#F9FDFD]">
                         Intelligence
                     </span>
                 </div>
@@ -220,8 +236,8 @@ blur-sm
 
                 <defs>
                     <linearGradient id="gradient">
-                        <stop offset="0%" stopColor="#3B82F6" />
-                        <stop offset="100%" stopColor="#8B5CF6" />
+                        <stop offset="0%" stopColor="#006E59" />
+                        <stop offset="100%" stopColor="#F7BD53" />
                     </linearGradient>
                 </defs>
             </svg>
@@ -231,7 +247,7 @@ blur-sm
                 packets.map((packet, index) => (
                     <motion.div
                         key={`packet-${index}`}
-                        className="absolute h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.9)]"
+                        className="absolute h-2 w-2 rounded-full bg-[#F7BD53] shadow-[0_0_12px_rgba(247,189,83,0.9)]"
                         initial={{
                             x: packet.x,
                             y: packet.y,
@@ -292,8 +308,8 @@ blur-sm
                         transition-all
                         duration-300
                         hover:scale-110
-                        hover:border-blue-400/40
-                        hover:shadow-[0_0_30px_rgba(59,130,246,0.35)]
+                        hover:border-[#F7BD53]/50
+                        hover:shadow-[0_0_30px_rgba(247,189,83,0.35)]
                         ">
                                 <Icon
                                     size={30}
