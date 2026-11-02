@@ -32,7 +32,7 @@ export const projects = [
 
         github: "https://github.com/Achese-creator/Confam",
 
-        demo: "",
+        demo: "https://confam-vb2a.vercel.app",
     },
 
 
