@@ -27,6 +27,7 @@ export default function ChatWindow({ open }: Props) {
     ]);
 
     const suggestedQuestions = [
+        "Tell me about CONFAM",
         "Tell me about Vault AI",
         "Explain TalentMatch AI",
         "What is SentinelAI?",

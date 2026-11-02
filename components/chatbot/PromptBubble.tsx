@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const prompts = [
+    "💬 Explore my CONFAM medicine verification project",
     "💬 Explore my Vault AI project",
     "💬 How does TalentMatch AI work?",
     "💬 What problems does SentinelAI solve?",

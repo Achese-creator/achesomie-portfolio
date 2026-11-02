@@ -49,8 +49,6 @@ def load_knowledge():
     return "\n\n".join(sections)
 
 
-KNOWLEDGE = load_knowledge()
-
 
 class PortfolioAssistant:
     def invoke(self, question: str) -> str:
@@ -77,7 +75,7 @@ class PortfolioAssistant:
                 {
                     "role": "user",
                     "content": (
-                        f"Portfolio context:\n{KNOWLEDGE}\n\n"
+                        f"Portfolio context:\n{load_knowledge()}\n\n"
                         f"Question: {question}"
                     ),
                 },

@@ -1,6 +1,42 @@
 
 export const projects = [
     {
+        id: "confam",
+        name: "confam/",
+        title: "CONFAM — AI-Assisted Medicine Verification",
+        image: "/projects/confam.png",
+
+        description:
+            "An independent AI-assisted medicine-package checker that extracts product claims from package photos and compares them against available Nigerian medicine registration records and safety alerts. Built as a solo AI engineering capstone.",
+
+        highlights: [
+            "Multi-Image Medicine Package Extraction",
+            "Gemini-Powered Structured Extraction",
+            "Pydantic Schema Validation",
+            "User Review and Deterministic Verification",
+            "Live Registry Lookup with Curated Data Fallback",
+            "Agent-Based Tool Calling",
+            "Source-Aware Evidence Reporting",
+            "Telegram Bot Interface",
+        ],
+
+        stack: [
+            "Python",
+            "FastAPI",
+            "React",
+            "Gemini",
+            "Pydantic",
+            "SQLite",
+            "Telegram Bot API",
+        ],
+
+        github: "https://github.com/Achese-creator/Confam",
+
+        demo: "",
+    },
+
+
+    {
         id: "vault-ai",
         name: "vault-ai/",
         title: "Vault AI — Universal Document Agent",
